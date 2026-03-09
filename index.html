@@ -13,7 +13,6 @@
       --surface2: #21253a;
       --border: #2e3356;
       --accent: #6366f1;
-      --accent2: #8b5cf6;
       --text: #e2e8f0;
       --muted: #8892b0;
       --tag-bg: #1e2240;
@@ -49,7 +48,6 @@
     }
     .tagline { color: var(--muted); font-size: .85rem; margin-bottom: 16px; }
 
-    /* Search */
     .search-wrap {
       display: flex;
       max-width: 560px;
@@ -92,11 +90,7 @@
       white-space: nowrap;
     }
     .nav-tab:hover { color: var(--text); background: var(--surface); }
-    .nav-tab.active {
-      color: #fff;
-      background: var(--accent);
-      border-color: var(--accent);
-    }
+    .nav-tab.active { color: #fff; background: var(--accent); border-color: var(--accent); }
 
     /* ── Main ── */
     main { max-width: 1300px; margin: 0 auto; padding: 24px 20px 60px; }
@@ -113,13 +107,7 @@
       padding-bottom: 8px;
       border-bottom: 1px solid var(--border);
     }
-    .section-icon { font-size: 1.2rem; }
-    .section-count {
-      margin-left: auto;
-      font-size: .75rem;
-      color: var(--muted);
-      font-weight: 400;
-    }
+    .section-count { margin-left: auto; font-size: .75rem; color: var(--muted); font-weight: 400; }
 
     /* ── Card grid ── */
     .card-grid {
@@ -127,7 +115,6 @@
       grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
       gap: 10px;
     }
-
     .card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -165,78 +152,35 @@
       border-radius: 10px;
       background: var(--surface2);
     }
-    .card-name {
-      font-size: .85rem;
-      font-weight: 600;
-      color: var(--text);
-      text-align: center;
-      line-height: 1.3;
-    }
-    .card-desc {
-      font-size: .72rem;
-      color: var(--muted);
-      text-align: center;
-      line-height: 1.4;
-    }
+    .card-name { font-size: .85rem; font-weight: 600; color: var(--text); text-align: center; line-height: 1.3; }
+    .card-desc { font-size: .72rem; color: var(--muted); text-align: center; line-height: 1.4; }
     .card-tag {
-      font-size: .65rem;
-      padding: 2px 7px;
-      border-radius: 10px;
-      background: var(--tag-bg);
-      color: var(--accent);
-      border: 1px solid #6366f130;
+      font-size: .65rem; padding: 2px 7px; border-radius: 10px;
+      background: var(--tag-bg); color: var(--accent); border: 1px solid #6366f130;
     }
     .hot-badge {
-      position: absolute;
-      top: 6px;
-      right: 6px;
-      font-size: .6rem;
-      padding: 1px 6px;
-      border-radius: 6px;
-      background: linear-gradient(90deg, #ef4444, #f97316);
-      color: #fff;
-      font-weight: 700;
+      position: absolute; top: 6px; right: 6px; font-size: .6rem;
+      padding: 1px 6px; border-radius: 6px;
+      background: linear-gradient(90deg, #ef4444, #f97316); color: #fff; font-weight: 700;
     }
     .new-badge {
-      position: absolute;
-      top: 6px;
-      right: 6px;
-      font-size: .6rem;
-      padding: 1px 6px;
-      border-radius: 6px;
-      background: linear-gradient(90deg, #10b981, #059669);
-      color: #fff;
-      font-weight: 700;
+      position: absolute; top: 6px; right: 6px; font-size: .6rem;
+      padding: 1px 6px; border-radius: 6px;
+      background: linear-gradient(90deg, #10b981, #059669); color: #fff; font-weight: 700;
     }
 
-    /* ── No results ── */
-    #noResults {
-      text-align: center;
-      padding: 60px 20px;
-      color: var(--muted);
-      display: none;
-    }
+    #noResults { text-align: center; padding: 60px 20px; color: var(--muted); display: none; }
     #noResults .icon { font-size: 3rem; margin-bottom: 12px; }
 
-    /* ── Footer ── */
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: var(--muted);
-      font-size: .8rem;
-      border-top: 1px solid var(--border);
-    }
+    footer { text-align: center; padding: 20px; color: var(--muted); font-size: .8rem; border-top: 1px solid var(--border); }
     footer a { color: var(--accent); text-decoration: none; }
-
-    /* Hidden */
-    .hidden { display: none !important; }
   </style>
 </head>
 <body>
 
 <header>
   <div class="logo">🤖 AI 导航</div>
-  <div class="tagline">一站直达全球热门人工智能工具与平台</div>
+  <div class="tagline">一站直达全球热门人工智能工具与平台 · 2025–2026 最新版</div>
   <div class="search-wrap">
     <input id="searchInput" type="text" placeholder="搜索 AI 工具…" autocomplete="off" />
   </div>
@@ -245,6 +189,7 @@
 <nav class="nav-tabs" id="navTabs">
   <button class="nav-tab active" data-cat="all">全部</button>
   <button class="nav-tab" data-cat="chat">💬 对话助手</button>
+  <button class="nav-tab" data-cat="cn">🇨🇳 国内平台</button>
   <button class="nav-tab" data-cat="image">🎨 图像生成</button>
   <button class="nav-tab" data-cat="video">🎬 视频生成</button>
   <button class="nav-tab" data-cat="code">💻 编程开发</button>
@@ -253,421 +198,160 @@
   <button class="nav-tab" data-cat="write">✍️ 写作办公</button>
   <button class="nav-tab" data-cat="design">🖌️ 设计创意</button>
   <button class="nav-tab" data-cat="agent">🤖 AI 智能体</button>
-  <button class="nav-tab" data-cat="cn">🇨🇳 国内平台</button>
 </nav>
 
 <main>
-  <div id="noResults">
-    <div class="icon">🔎</div>
-    <p>未找到相关工具，请尝试其他关键词</p>
-  </div>
+  <div id="noResults"><div class="icon">🔎</div><p>未找到相关工具，请尝试其他关键词</p></div>
   <div id="sections"></div>
 </main>
 
 <footer>
-  <p>数据仅供参考，链接归各平台所有 · 持续更新中 · <a href="https://github.com" target="_blank">GitHub</a></p>
+  <p>数据仅供参考，链接归各平台所有 · 2026.03 更新 · <a href="https://github.com" target="_blank">GitHub</a></p>
 </footer>
 
 <script>
 const DATA = [
-  // ── 对话助手 ──
-  {
-    cat: "chat", name: "ChatGPT", url: "https://chatgpt.com",
-    emoji: "🌟", desc: "OpenAI 旗舰对话 AI", tag: "GPT-4o", hot: true
-  },
-  {
-    cat: "chat", name: "Claude", url: "https://claude.ai",
-    emoji: "🌊", desc: "Anthropic 出品，长文理解强", tag: "Claude 3.5"
-  },
-  {
-    cat: "chat", name: "Gemini", url: "https://gemini.google.com",
-    emoji: "♊", desc: "Google 多模态大模型", tag: "Gemini 2.0", hot: true
-  },
-  {
-    cat: "chat", name: "Copilot", url: "https://copilot.microsoft.com",
-    emoji: "🪟", desc: "微软 AI 助手", tag: "GPT-4"
-  },
-  {
-    cat: "chat", name: "Grok", url: "https://grok.com",
-    emoji: "✖️", desc: "xAI 出品，接入 X 实时数据", tag: "Grok 3", isNew: true
-  },
-  {
-    cat: "chat", name: "DeepSeek", url: "https://chat.deepseek.com",
-    emoji: "🔬", desc: "深度求索，推理能力强", tag: "R1", hot: true
-  },
-  {
-    cat: "chat", name: "Meta AI", url: "https://meta.ai",
-    emoji: "🔵", desc: "Meta 开源 Llama 系列", tag: "Llama 3"
-  },
-  {
-    cat: "chat", name: "Mistral", url: "https://chat.mistral.ai",
-    emoji: "🌪️", desc: "欧洲顶尖开源大模型", tag: "Mistral"
-  },
-  {
-    cat: "chat", name: "Perplexity", url: "https://www.perplexity.ai",
-    emoji: "🔮", desc: "带引用的 AI 搜索对话", tag: "搜索+对话"
-  },
-  {
-    cat: "chat", name: "Pi", url: "https://pi.ai",
-    emoji: "🥧", desc: "情感化 AI 个人助理", tag: "Inflection"
-  },
+  // ══ 对话助手 ══
+  { cat:"chat", name:"ChatGPT",      url:"https://chatgpt.com",                emoji:"🌟", desc:"OpenAI 旗舰对话，支持语音/图像",  tag:"GPT-4o",     hot:true  },
+  { cat:"chat", name:"Claude",       url:"https://claude.ai",                  emoji:"🌊", desc:"Anthropic 出品，长文&代码首选",    tag:"Claude 3.7", hot:true  },
+  { cat:"chat", name:"Gemini",       url:"https://gemini.google.com",          emoji:"♊", desc:"Google 多模态，深度整合 Workspace",tag:"Gemini 2.0", hot:true  },
+  { cat:"chat", name:"Copilot",      url:"https://copilot.microsoft.com",      emoji:"🪟", desc:"微软 AI 助手，深度整合 Office",    tag:"GPT-4o"                },
+  { cat:"chat", name:"Grok",         url:"https://grok.com",                   emoji:"✖️", desc:"xAI 出品，接入 X 实时信息",        tag:"Grok 3",     hot:true  },
+  { cat:"chat", name:"DeepSeek",     url:"https://chat.deepseek.com",          emoji:"🔬", desc:"国产推理之王，R1 开源震撼",         tag:"R1",         hot:true  },
+  { cat:"chat", name:"Meta AI",      url:"https://meta.ai",                    emoji:"🔵", desc:"Llama 系列，全球最大开源模型",      tag:"Llama 3.3"             },
+  { cat:"chat", name:"Mistral",      url:"https://chat.mistral.ai",            emoji:"🌪️", desc:"欧洲顶尖，Mixtral 开源混合专家",   tag:"Mistral Large"         },
+  { cat:"chat", name:"Qwen Chat",    url:"https://chat.qwenlm.ai",             emoji:"🐦", desc:"阿里通义 Qwen 国际对话界面",        tag:"Qwen2.5",    isNew:true},
+  { cat:"chat", name:"Pi",           url:"https://pi.ai",                      emoji:"🥧", desc:"情感化 AI 个人助理",               tag:"Inflection"            },
 
-  // ── 国内平台 ──
-  {
-    cat: "cn", name: "文心一言", url: "https://yiyan.baidu.com",
-    emoji: "🌙", desc: "百度 ERNIE 大模型", tag: "ERNIE 4.0", hot: true
-  },
-  {
-    cat: "cn", name: "通义千问", url: "https://tongyi.aliyun.com",
-    emoji: "🔔", desc: "阿里云 Qwen 系列", tag: "Qwen2.5"
-  },
-  {
-    cat: "cn", name: "豆包", url: "https://www.doubao.com",
-    emoji: "🫘", desc: "字节跳动 AI 助手", tag: "字节", hot: true
-  },
-  {
-    cat: "cn", name: "Kimi", url: "https://kimi.moonshot.cn",
-    emoji: "🌛", desc: "月之暗面，超长上下文", tag: "Moonshot", hot: true
-  },
-  {
-    cat: "cn", name: "讯飞星火", url: "https://xinghuo.xfyun.cn",
-    emoji: "✨", desc: "科大讯飞认知大模型", tag: "Spark"
-  },
-  {
-    cat: "cn", name: "智谱清言", url: "https://chatglm.cn",
-    emoji: "🧠", desc: "清华 GLM 系列模型", tag: "GLM-4"
-  },
-  {
-    cat: "cn", name: "腾讯元宝", url: "https://yuanbao.tencent.com",
-    emoji: "💎", desc: "腾讯混元大模型", tag: "腾讯"
-  },
-  {
-    cat: "cn", name: "360 AI", url: "https://ai.360.com",
-    emoji: "⚙️", desc: "360 智脑大模型", tag: "360"
-  },
-  {
-    cat: "cn", name: "百川智能", url: "https://www.baichuan-ai.com",
-    emoji: "🏔️", desc: "百川大模型助手", tag: "Baichuan"
-  },
-  {
-    cat: "cn", name: "天工 AI", url: "https://www.tiangong.cn",
-    emoji: "🛠️", desc: "昆仑万维天工模型", tag: "天工"
-  },
+  // ══ 国内平台 ══
+  { cat:"cn", name:"文心一言",  url:"https://yiyan.baidu.com",         emoji:"🌙", desc:"百度 ERNIE 4.5 万亿参数",    tag:"ERNIE 4.5",  hot:true  },
+  { cat:"cn", name:"通义千问",  url:"https://tongyi.aliyun.com",       emoji:"🔔", desc:"阿里 Qwen2.5，支持长思链",    tag:"Qwen2.5",    hot:true  },
+  { cat:"cn", name:"豆包",      url:"https://www.doubao.com",          emoji:"🫘", desc:"字节跳动，日活破亿 AI 助手",  tag:"字节",       hot:true  },
+  { cat:"cn", name:"Kimi",      url:"https://kimi.moonshot.cn",        emoji:"🌛", desc:"月之暗面，128K 超长上下文",   tag:"Moonshot",   hot:true  },
+  { cat:"cn", name:"讯飞星火",  url:"https://xinghuo.xfyun.cn",        emoji:"✨", desc:"科大讯飞 Spark 4.0 Ultra",   tag:"Spark 4.0"             },
+  { cat:"cn", name:"智谱清言",  url:"https://chatglm.cn",              emoji:"🧠", desc:"清华 GLM-4 Plus，支持代码",   tag:"GLM-4"                 },
+  { cat:"cn", name:"腾讯元宝",  url:"https://yuanbao.tencent.com",     emoji:"💎", desc:"腾讯混元大模型助手",          tag:"混元"                  },
+  { cat:"cn", name:"天工 AI",   url:"https://www.tiangong.cn",         emoji:"🛠️", desc:"昆仑万维天工 3.0",           tag:"天工"                  },
+  { cat:"cn", name:"百川智能",  url:"https://www.baichuan-ai.com",     emoji:"🏔️", desc:"百川 2，医疗&金融场景",       tag:"Baichuan2"             },
+  { cat:"cn", name:"MiniMax",   url:"https://hailuoai.com",            emoji:"🔮", desc:"海螺 AI，MiniMax-Text-01",   tag:"MiniMax",    isNew:true},
+  { cat:"cn", name:"Step AI",   url:"https://www.stepfun.com",         emoji:"🪜", desc:"阶跃星辰，Step-2 万亿参数",   tag:"Step-2",     isNew:true},
+  { cat:"cn", name:"零一万物",  url:"https://www.01.ai",               emoji:"①",  desc:"Yi 系列，李开复出品",         tag:"Yi-Large"              },
 
-  // ── 图像生成 ──
-  {
-    cat: "image", name: "Midjourney", url: "https://www.midjourney.com",
-    emoji: "🎨", desc: "顶级 AI 绘图，艺术感强", tag: "MJ v7", hot: true
-  },
-  {
-    cat: "image", name: "DALL·E 3", url: "https://openai.com/dall-e-3",
-    emoji: "🖼️", desc: "OpenAI 出品，语义理解强", tag: "OpenAI"
-  },
-  {
-    cat: "image", name: "Stable Diffusion", url: "https://stability.ai",
-    emoji: "🌌", desc: "开源图像生成模型", tag: "开源"
-  },
-  {
-    cat: "image", name: "Adobe Firefly", url: "https://firefly.adobe.com",
-    emoji: "🔥", desc: "Adobe 商用 AI 图像工具", tag: "Adobe"
-  },
-  {
-    cat: "image", name: "Ideogram", url: "https://ideogram.ai",
-    emoji: "💡", desc: "文字渲染效果出色", tag: "v2"
-  },
-  {
-    cat: "image", name: "Leonardo AI", url: "https://leonardo.ai",
-    emoji: "🦁", desc: "游戏风格图像生成", tag: "游戏"
-  },
-  {
-    cat: "image", name: "Flux", url: "https://fal.ai/models/fal-ai/flux",
-    emoji: "⚡", desc: "Black Forest Labs 出品", tag: "FLUX.1", isNew: true
-  },
-  {
-    cat: "image", name: "Canva AI", url: "https://www.canva.com/ai-image-generator",
-    emoji: "🎭", desc: "Canva 内置 AI 图像生成", tag: "Canva"
-  },
-  {
-    cat: "image", name: "Playground", url: "https://playground.com",
-    emoji: "🛝", desc: "免费高质量图像生成", tag: "免费"
-  },
-  {
-    cat: "image", name: "Krea AI", url: "https://www.krea.ai",
-    emoji: "🌀", desc: "实时 AI 图像生成", tag: "实时"
-  },
+  // ══ 图像生成 ══
+  { cat:"image", name:"Midjourney",    url:"https://www.midjourney.com",               emoji:"🎨", desc:"顶级 AI 绘图，艺术质感无与伦比",  tag:"MJ v7",      hot:true  },
+  { cat:"image", name:"DALL·E 3",     url:"https://openai.com/dall-e-3",              emoji:"🖼️", desc:"OpenAI 出品，语义理解极强",        tag:"ChatGPT 内置"           },
+  { cat:"image", name:"Flux",          url:"https://fal.ai/models/fal-ai/flux",        emoji:"⚡", desc:"Black Forest Labs 顶级模型",       tag:"FLUX.1",     hot:true  },
+  { cat:"image", name:"Stable Diffusion",url:"https://stability.ai",                  emoji:"🌌", desc:"开源生态最丰富的图像模型",         tag:"SD3.5",      hot:true  },
+  { cat:"image", name:"Adobe Firefly", url:"https://firefly.adobe.com",               emoji:"🔥", desc:"商用安全，深度整合 Creative Cloud", tag:"Firefly 3"             },
+  { cat:"image", name:"Ideogram",      url:"https://ideogram.ai",                     emoji:"💡", desc:"文字渲染效果业界领先",             tag:"v2.0"                  },
+  { cat:"image", name:"Leonardo AI",   url:"https://leonardo.ai",                     emoji:"🦁", desc:"游戏资产&角色设计首选",            tag:"Phoenix"               },
+  { cat:"image", name:"Canva AI",      url:"https://www.canva.com/ai-image-generator", emoji:"🎭", desc:"Canva 内置 AI 图像，设计一体化",   tag:"Canva"                 },
+  { cat:"image", name:"Playground",    url:"https://playground.com",                  emoji:"🛝", desc:"免费高质量，创意风格多样",          tag:"v3"                    },
+  { cat:"image", name:"Recraft",       url:"https://www.recraft.ai",                  emoji:"🔷", desc:"矢量/品牌设计 AI，可控性强",       tag:"v3",         isNew:true},
+  { cat:"image", name:"Krea AI",       url:"https://www.krea.ai",                     emoji:"🌀", desc:"实时生成，创意探索利器",           tag:"实时"                  },
+  { cat:"image", name:"即梦 AI",       url:"https://jimeng.jianying.com",             emoji:"🌸", desc:"字节出品，中文理解优秀",           tag:"国产",       hot:true  },
 
-  // ── 视频生成 ──
-  {
-    cat: "video", name: "Sora", url: "https://sora.com",
-    emoji: "🌅", desc: "OpenAI 视频生成模型", tag: "OpenAI", hot: true
-  },
-  {
-    cat: "video", name: "Runway", url: "https://runwayml.com",
-    emoji: "🎬", desc: "专业 AI 视频编辑生成", tag: "Gen-3"
-  },
-  {
-    cat: "video", name: "Pika", url: "https://pika.art",
-    emoji: "⚡", desc: "快速 AI 视频创作工具", tag: "Pika 2.0"
-  },
-  {
-    cat: "video", name: "Kling AI", url: "https://klingai.com",
-    emoji: "🎥", desc: "快手可灵，国产视频 AI", tag: "可灵", hot: true
-  },
-  {
-    cat: "video", name: "HeyGen", url: "https://www.heygen.com",
-    emoji: "🧑‍💼", desc: "AI 数字人视频制作", tag: "数字人"
-  },
-  {
-    cat: "video", name: "Luma Dream", url: "https://lumalabs.ai/dream-machine",
-    emoji: "🌙", desc: "Dream Machine 视频生成", tag: "Luma"
-  },
-  {
-    cat: "video", name: "Synthesia", url: "https://www.synthesia.io",
-    emoji: "🎙️", desc: "AI 演示视频生成平台", tag: "企业"
-  },
-  {
-    cat: "video", name: "CapCut AI", url: "https://www.capcut.com",
-    emoji: "✂️", desc: "剪映国际版 AI 剪辑", tag: "字节"
-  },
-  {
-    cat: "video", name: "Vidu", url: "https://www.vidu.studio",
-    emoji: "🎞️", desc: "生数科技视频生成", tag: "国产", isNew: true
-  },
-  {
-    cat: "video", name: "Invideo AI", url: "https://invideo.io",
-    emoji: "🎞️", desc: "文字转视频一键生成", tag: "文转视"
-  },
+  // ══ 视频生成 ══
+  { cat:"video", name:"Sora",        url:"https://sora.com",                    emoji:"🌅", desc:"OpenAI 视频生成，1080P 超长视频",  tag:"OpenAI",     hot:true  },
+  { cat:"video", name:"Runway",      url:"https://runwayml.com",                emoji:"🎬", desc:"专业级 AI 视频创作首选",            tag:"Gen-3 Alpha"           },
+  { cat:"video", name:"Kling AI",    url:"https://klingai.com",                 emoji:"🎥", desc:"快手可灵，国产第一视频 AI",         tag:"可灵 2.0",   hot:true  },
+  { cat:"video", name:"Pika",        url:"https://pika.art",                    emoji:"⚡", desc:"创意视频效果与特效生成",            tag:"Pika 2.0"              },
+  { cat:"video", name:"Luma Dream",  url:"https://lumalabs.ai/dream-machine",   emoji:"🌙", desc:"Dream Machine，物理感真实",         tag:"Ray 2",      isNew:true},
+  { cat:"video", name:"HeyGen",      url:"https://www.heygen.com",              emoji:"🧑‍💼", desc:"AI 数字人视频制作平台",            tag:"数字人"                },
+  { cat:"video", name:"Synthesia",   url:"https://www.synthesia.io",            emoji:"🎙️", desc:"企业级 AI 演示视频，多语言配音",   tag:"企业"                  },
+  { cat:"video", name:"Vidu",        url:"https://www.vidu.studio",             emoji:"🎞️", desc:"生数科技，高一致性视频生成",        tag:"Vidu 2.0",   isNew:true},
+  { cat:"video", name:"即梦视频",    url:"https://jimeng.jianying.com",         emoji:"✂️", desc:"字节剪映旗下 AI 视频生成",          tag:"字节",       hot:true  },
+  { cat:"video", name:"混元视频",    url:"https://video.hunyuan.tencent.com",   emoji:"🎦", desc:"腾讯混元，开源视频生成模型",        tag:"腾讯",       isNew:true},
+  { cat:"video", name:"Invideo AI",  url:"https://invideo.io",                  emoji:"🎞️", desc:"文字一键转营销视频",               tag:"文转视"                },
 
-  // ── 编程开发 ──
-  {
-    cat: "code", name: "GitHub Copilot", url: "https://github.com/features/copilot",
-    emoji: "🐙", desc: "GitHub AI 编程助手", tag: "微软", hot: true
-  },
-  {
-    cat: "code", name: "Cursor", url: "https://cursor.sh",
-    emoji: "🖱️", desc: "AI 原生代码编辑器", tag: "IDE", hot: true
-  },
-  {
-    cat: "code", name: "v0 by Vercel", url: "https://v0.dev",
-    emoji: "🔷", desc: "AI 生成 UI 组件代码", tag: "前端", hot: true
-  },
-  {
-    cat: "code", name: "Replit AI", url: "https://replit.com",
-    emoji: "🔁", desc: "在线 AI 编程开发环境", tag: "在线 IDE"
-  },
-  {
-    cat: "code", name: "Windsurf", url: "https://windsurf.com",
-    emoji: "🏄", desc: "Codeium 出品 AI 编辑器", tag: "IDE"
-  },
-  {
-    cat: "code", name: "Tabnine", url: "https://www.tabnine.com",
-    emoji: "📋", desc: "AI 代码补全插件", tag: "插件"
-  },
-  {
-    cat: "code", name: "Bolt.new", url: "https://bolt.new",
-    emoji: "⚡", desc: "AI 全栈应用一键生成", tag: "全栈", isNew: true
-  },
-  {
-    cat: "code", name: "Lovable", url: "https://lovable.dev",
-    emoji: "💜", desc: "AI 生成完整 Web 应用", tag: "全栈", isNew: true
-  },
-  {
-    cat: "code", name: "Cody AI", url: "https://sourcegraph.com/cody",
-    emoji: "🐕", desc: "Sourcegraph AI 代码助手", tag: "Sourcegraph"
-  },
-  {
-    cat: "code", name: "Amazon Q", url: "https://aws.amazon.com/q",
-    emoji: "🟠", desc: "AWS AI 编程助手", tag: "AWS"
-  },
+  // ══ 编程开发 ══
+  { cat:"code", name:"GitHub Copilot", url:"https://github.com/features/copilot", emoji:"🐙", desc:"全球最流行 AI 编程助手",        tag:"GPT-4o",     hot:true  },
+  { cat:"code", name:"Cursor",         url:"https://cursor.sh",                   emoji:"🖱️", desc:"AI 原生编辑器，Agent 模式",     tag:"Claude 3.7", hot:true  },
+  { cat:"code", name:"Windsurf",       url:"https://windsurf.com",                emoji:"🏄", desc:"Codeium 出品，Flow 协作模式",   tag:"Cascade",    hot:true  },
+  { cat:"code", name:"v0 by Vercel",   url:"https://v0.dev",                      emoji:"🔷", desc:"AI 生成 UI 组件，React 首选",   tag:"前端",       hot:true  },
+  { cat:"code", name:"Bolt.new",       url:"https://bolt.new",                    emoji:"⚡", desc:"StackBlitz 出品，全栈应用生成", tag:"全栈",       hot:true  },
+  { cat:"code", name:"Lovable",        url:"https://lovable.dev",                 emoji:"💜", desc:"AI 生成完整 Web 应用",          tag:"全栈",       isNew:true},
+  { cat:"code", name:"Replit AI",      url:"https://replit.com",                  emoji:"🔁", desc:"在线 AI 编程开发环境",          tag:"在线 IDE"              },
+  { cat:"code", name:"Tabnine",        url:"https://www.tabnine.com",             emoji:"📋", desc:"AI 代码补全，隐私保护出色",     tag:"插件"                  },
+  { cat:"code", name:"Amazon Q",       url:"https://aws.amazon.com/q",            emoji:"🟠", desc:"AWS AI 编程+企业知识库",        tag:"AWS"                   },
+  { cat:"code", name:"Cody AI",        url:"https://sourcegraph.com/cody",        emoji:"🐕", desc:"Sourcegraph 代码库感知 AI",    tag:"企业"                  },
+  { cat:"code", name:"Aider",          url:"https://aider.chat",                  emoji:"🤝", desc:"终端 AI 结对编程，Git 集成",   tag:"开源",       isNew:true},
+  { cat:"code", name:"Continue",       url:"https://www.continue.dev",            emoji:"▶️", desc:"开源 IDE AI 助手插件",         tag:"开源"                  },
 
-  // ── AI 搜索 ──
-  {
-    cat: "search", name: "Perplexity", url: "https://www.perplexity.ai",
-    emoji: "🔮", desc: "带引用的 AI 搜索引擎", tag: "搜索", hot: true
-  },
-  {
-    cat: "search", name: "You.com", url: "https://you.com",
-    emoji: "🔍", desc: "AI 增强搜索引擎", tag: "搜索"
-  },
-  {
-    cat: "search", name: "Phind", url: "https://www.phind.com",
-    emoji: "🧩", desc: "面向开发者的 AI 搜索", tag: "开发者"
-  },
-  {
-    cat: "search", name: "Exa", url: "https://exa.ai",
-    emoji: "🌐", desc: "语义化 AI 网络搜索", tag: "语义"
-  },
-  {
-    cat: "search", name: "Andi", url: "https://andisearch.com",
-    emoji: "🤝", desc: "对话式 AI 搜索引擎", tag: "对话"
-  },
-  {
-    cat: "search", name: "Brave AI", url: "https://search.brave.com",
-    emoji: "🦁", desc: "Brave 内置 AI 搜索", tag: "隐私"
-  },
+  // ══ AI 搜索 ══
+  { cat:"search", name:"Perplexity",  url:"https://www.perplexity.ai",  emoji:"🔮", desc:"带引用的 AI 搜索，Pro 支持 GPT-4", tag:"Deep Research", hot:true },
+  { cat:"search", name:"You.com",     url:"https://you.com",            emoji:"🔍", desc:"AI 增强搜索引擎，支持多模态",      tag:"You AI"                   },
+  { cat:"search", name:"Phind",       url:"https://www.phind.com",      emoji:"🧩", desc:"面向开发者的技术搜索 AI",          tag:"开发者"                   },
+  { cat:"search", name:"Exa",         url:"https://exa.ai",             emoji:"🌐", desc:"语义化神经搜索 API",               tag:"API",          isNew:true },
+  { cat:"search", name:"Andi",        url:"https://andisearch.com",     emoji:"🤝", desc:"对话式 AI 搜索，无广告",           tag:"对话"                     },
+  { cat:"search", name:"Kagi",        url:"https://kagi.com",           emoji:"🦘", desc:"付费无广告搜索，AI 摘要",          tag:"付费"                     },
+  { cat:"search", name:"Tavily",      url:"https://tavily.com",         emoji:"🔭", desc:"AI Agent 专用搜索 API",            tag:"API",          isNew:true },
 
-  // ── 音频音乐 ──
-  {
-    cat: "audio", name: "Suno", url: "https://suno.com",
-    emoji: "🎵", desc: "AI 一键生成歌曲", tag: "音乐", hot: true
-  },
-  {
-    cat: "audio", name: "Udio", url: "https://www.udio.com",
-    emoji: "🎶", desc: "高质量 AI 音乐创作", tag: "音乐"
-  },
-  {
-    cat: "audio", name: "ElevenLabs", url: "https://elevenlabs.io",
-    emoji: "🔊", desc: "顶级 AI 语音克隆合成", tag: "语音", hot: true
-  },
-  {
-    cat: "audio", name: "Murf AI", url: "https://murf.ai",
-    emoji: "🎤", desc: "AI 语音配音工具", tag: "配音"
-  },
-  {
-    cat: "audio", name: "Descript", url: "https://www.descript.com",
-    emoji: "📝", desc: "AI 音视频编辑转录", tag: "转录"
-  },
-  {
-    cat: "audio", name: "Adobe Podcast", url: "https://podcast.adobe.com",
-    emoji: "🎙️", desc: "AI 播客音频增强工具", tag: "Adobe"
-  },
-  {
-    cat: "audio", name: "Whisper", url: "https://whisper.openai.com",
-    emoji: "🌬️", desc: "OpenAI 语音转文字", tag: "转录"
-  },
-  {
-    cat: "audio", name: "Boomy", url: "https://boomy.com",
-    emoji: "💥", desc: "30 秒 AI 生成歌曲", tag: "音乐"
-  },
+  // ══ 音频音乐 ══
+  { cat:"audio", name:"Suno",          url:"https://suno.com",                emoji:"🎵", desc:"AI 歌曲生成神器，有词有曲",    tag:"v4",           hot:true  },
+  { cat:"audio", name:"Udio",          url:"https://www.udio.com",            emoji:"🎶", desc:"高品质 AI 音乐创作",           tag:"v1.5"                    },
+  { cat:"audio", name:"ElevenLabs",    url:"https://elevenlabs.io",           emoji:"🔊", desc:"顶级 AI 语音克隆与合成",       tag:"v3",           hot:true  },
+  { cat:"audio", name:"Hailuo Audio",  url:"https://hailuoai.com/audio",      emoji:"🎤", desc:"MiniMax 语音，自然度极高",     tag:"国产",         isNew:true},
+  { cat:"audio", name:"Descript",      url:"https://www.descript.com",        emoji:"📝", desc:"AI 音视频编辑与转录",          tag:"转录"                    },
+  { cat:"audio", name:"Adobe Podcast", url:"https://podcast.adobe.com",       emoji:"🎙️", desc:"AI 播客录音增强工具",          tag:"Adobe"                   },
+  { cat:"audio", name:"Murf AI",       url:"https://murf.ai",                 emoji:"🔈", desc:"120+ 语言 AI 配音合成",       tag:"配音"                    },
+  { cat:"audio", name:"Boomy",         url:"https://boomy.com",               emoji:"💥", desc:"30 秒 AI 生成可商用歌曲",     tag:"音乐"                    },
 
-  // ── 写作办公 ──
-  {
-    cat: "write", name: "Notion AI", url: "https://www.notion.so/product/ai",
-    emoji: "📓", desc: "笔记知识库内嵌 AI", tag: "Notion", hot: true
-  },
-  {
-    cat: "write", name: "Jasper", url: "https://www.jasper.ai",
-    emoji: "💎", desc: "企业级 AI 内容营销", tag: "营销"
-  },
-  {
-    cat: "write", name: "Copy.ai", url: "https://www.copy.ai",
-    emoji: "📋", desc: "AI 营销文案生成", tag: "文案"
-  },
-  {
-    cat: "write", name: "Grammarly", url: "https://www.grammarly.com",
-    emoji: "✅", desc: "AI 语法写作润色", tag: "润色"
-  },
-  {
-    cat: "write", name: "Writesonic", url: "https://writesonic.com",
-    emoji: "⚡", desc: "AI SEO 内容写作", tag: "SEO"
-  },
-  {
-    cat: "write", name: "Beautiful.ai", url: "https://www.beautiful.ai",
-    emoji: "📊", desc: "AI 生成精美 PPT", tag: "PPT"
-  },
-  {
-    cat: "write", name: "Gamma", url: "https://gamma.app",
-    emoji: "🌟", desc: "AI 演示文稿一键生成", tag: "PPT", hot: true
-  },
-  {
-    cat: "write", name: "QuillBot", url: "https://quillbot.com",
-    emoji: "🪶", desc: "AI 改写润色工具", tag: "润色"
-  },
+  // ══ 写作办公 ══
+  { cat:"write", name:"Notion AI",    url:"https://www.notion.so/product/ai",  emoji:"📓", desc:"笔记 + AI，知识库问答",       tag:"Notion",       hot:true  },
+  { cat:"write", name:"Gamma",        url:"https://gamma.app",                 emoji:"🌟", desc:"AI 一键生成精美演示文稿",     tag:"PPT",          hot:true  },
+  { cat:"write", name:"Jasper",       url:"https://www.jasper.ai",             emoji:"💎", desc:"企业级 AI 内容营销平台",      tag:"营销"                    },
+  { cat:"write", name:"Copy.ai",      url:"https://www.copy.ai",               emoji:"📋", desc:"AI 营销文案批量生成",         tag:"文案"                    },
+  { cat:"write", name:"Grammarly",    url:"https://www.grammarly.com",         emoji:"✅", desc:"AI 英文语法润色工具",         tag:"润色"                    },
+  { cat:"write", name:"Beautiful.ai", url:"https://www.beautiful.ai",          emoji:"📊", desc:"AI 自适应布局 PPT",           tag:"PPT"                     },
+  { cat:"write", name:"Tome",         url:"https://tome.app",                  emoji:"📖", desc:"AI 叙事型演示文稿创作",       tag:"PPT"                     },
+  { cat:"write", name:"QuillBot",     url:"https://quillbot.com",              emoji:"🪶", desc:"AI 改写润色与查重",           tag:"润色"                    },
 
-  // ── 设计创意 ──
-  {
-    cat: "design", name: "Figma AI", url: "https://www.figma.com/ai",
-    emoji: "🎨", desc: "Figma 内置 AI 设计助手", tag: "UI/UX"
-  },
-  {
-    cat: "design", name: "Canva", url: "https://www.canva.com",
-    emoji: "🖼️", desc: "AI 辅助平面设计工具", tag: "设计", hot: true
-  },
-  {
-    cat: "design", name: "Adobe Gen AI", url: "https://www.adobe.com/ai",
-    emoji: "🔴", desc: "Adobe 全套 AI 设计工具", tag: "Adobe"
-  },
-  {
-    cat: "design", name: "Looka", url: "https://looka.com",
-    emoji: "🦉", desc: "AI 一键生成品牌 Logo", tag: "Logo"
-  },
-  {
-    cat: "design", name: "Remove.bg", url: "https://www.remove.bg",
-    emoji: "✂️", desc: "AI 一键抠图去背景", tag: "抠图"
-  },
-  {
-    cat: "design", name: "Cleanup.pics", url: "https://cleanup.pictures",
-    emoji: "🧹", desc: "AI 消除图片不需要元素", tag: "修图"
-  },
-  {
-    cat: "design", name: "Khroma", url: "https://www.khroma.co",
-    emoji: "🌈", desc: "AI 智能配色工具", tag: "配色"
-  },
-  {
-    cat: "design", name: "Uizard", url: "https://uizard.io",
-    emoji: "📱", desc: "草图转 UI 原型设计", tag: "原型"
-  },
+  // ══ 设计创意 ══
+  { cat:"design", name:"Figma AI",       url:"https://www.figma.com/ai",            emoji:"🎨", desc:"Figma AI 设计助手 + Make",  tag:"UI/UX",        hot:true  },
+  { cat:"design", name:"Canva",          url:"https://www.canva.com",               emoji:"🖼️", desc:"AI 辅助平面设计，模板丰富", tag:"设计",         hot:true  },
+  { cat:"design", name:"Framer AI",      url:"https://www.framer.com",              emoji:"🖱️", desc:"AI 生成可发布网站",         tag:"网站"                    },
+  { cat:"design", name:"Looka",          url:"https://looka.com",                   emoji:"🦉", desc:"AI 一键生成品牌 Logo",      tag:"Logo"                    },
+  { cat:"design", name:"Remove.bg",      url:"https://www.remove.bg",               emoji:"✂️", desc:"AI 秒级抠图去背景",         tag:"抠图"                    },
+  { cat:"design", name:"Magnific",       url:"https://magnific.ai",                 emoji:"🔍", desc:"AI 图像超分辨率放大",       tag:"超分",         isNew:true},
+  { cat:"design", name:"Khroma",         url:"https://www.khroma.co",               emoji:"🌈", desc:"AI 个性化配色工具",         tag:"配色"                    },
+  { cat:"design", name:"Uizard",         url:"https://uizard.io",                   emoji:"📱", desc:"草图一键转 UI 原型",        tag:"原型"                    },
+  { cat:"design", name:"Rive",           url:"https://rive.app",                    emoji:"🎠", desc:"AI 辅助交互动画设计",       tag:"动画",         isNew:true},
 
-  // ── AI 智能体 ──
-  {
-    cat: "agent", name: "AutoGPT", url: "https://agpt.co",
-    emoji: "🤖", desc: "自主 AI 任务智能体", tag: "Agent"
-  },
-  {
-    cat: "agent", name: "LangChain", url: "https://langchain.com",
-    emoji: "🔗", desc: "LLM 应用开发框架", tag: "框架", hot: true
-  },
-  {
-    cat: "agent", name: "Dify", url: "https://dify.ai",
-    emoji: "🌊", desc: "开源 LLM 应用构建平台", tag: "开源", hot: true
-  },
-  {
-    cat: "agent", name: "n8n", url: "https://n8n.io",
-    emoji: "🔄", desc: "AI 工作流自动化平台", tag: "自动化"
-  },
-  {
-    cat: "agent", name: "Zapier AI", url: "https://zapier.com/ai",
-    emoji: "⚡", desc: "AI 驱动工作流自动化", tag: "自动化"
-  },
-  {
-    cat: "agent", name: "CrewAI", url: "https://crewai.com",
-    emoji: "🚢", desc: "多 AI 协作智能体框架", tag: "多智能体"
-  },
-  {
-    cat: "agent", name: "Flowise", url: "https://flowiseai.com",
-    emoji: "🌊", desc: "可视化 LLM 流程构建", tag: "开源"
-  },
-  {
-    cat: "agent", name: "TaskWeaver", url: "https://github.com/microsoft/TaskWeaver",
-    emoji: "🕸️", desc: "微软代码优先 AI 框架", tag: "微软"
-  },
+  // ══ AI 智能体 ══
+  { cat:"agent", name:"Dify",        url:"https://dify.ai",                        emoji:"🌊", desc:"开源 LLM 应用构建平台",     tag:"开源",         hot:true  },
+  { cat:"agent", name:"LangChain",   url:"https://langchain.com",                  emoji:"🔗", desc:"LLM 应用开发框架&生态",     tag:"框架",         hot:true  },
+  { cat:"agent", name:"n8n",         url:"https://n8n.io",                         emoji:"🔄", desc:"AI 工作流自动化平台",       tag:"自动化"                  },
+  { cat:"agent", name:"Zapier AI",   url:"https://zapier.com/ai",                  emoji:"⚡", desc:"5000+ 应用自动化连接",      tag:"自动化"                  },
+  { cat:"agent", name:"CrewAI",      url:"https://crewai.com",                     emoji:"🚢", desc:"多 Agent 协同框架",         tag:"多智能体",     hot:true  },
+  { cat:"agent", name:"Flowise",     url:"https://flowiseai.com",                  emoji:"🌊", desc:"可视化 LLM 流程构建器",     tag:"开源"                    },
+  { cat:"agent", name:"AutoGen",     url:"https://microsoft.github.io/autogen",    emoji:"🤖", desc:"微软多 Agent 对话框架",     tag:"微软"                    },
+  { cat:"agent", name:"OpenDevin",   url:"https://github.com/OpenDevin/OpenDevin", emoji:"🛠️", desc:"开源 AI 软件工程师 Agent",  tag:"开源",         isNew:true},
+  { cat:"agent", name:"Devin",       url:"https://devin.ai",                       emoji:"👨‍💻", desc:"全球首个 AI 软件工程师",    tag:"Cognition",    isNew:true},
+  { cat:"agent", name:"Claude Agent", url:"https://claude.ai",                     emoji:"🌊", desc:"Claude Computer Use 能力",  tag:"Anthropic",    isNew:true},
 ];
 
-// ── Category metadata ──
 const CATS = {
-  chat:   { label: "💬 对话助手", icon: "💬" },
-  cn:     { label: "🇨🇳 国内平台", icon: "🇨🇳" },
-  image:  { label: "🎨 图像生成", icon: "🎨" },
-  video:  { label: "🎬 视频生成", icon: "🎬" },
-  code:   { label: "💻 编程开发", icon: "💻" },
-  search: { label: "🔍 AI 搜索",  icon: "🔍" },
-  audio:  { label: "🎵 音频音乐", icon: "🎵" },
-  write:  { label: "✍️ 写作办公", icon: "✍️" },
-  design: { label: "🖌️ 设计创意", icon: "🖌️" },
-  agent:  { label: "🤖 AI 智能体", icon: "🤖" },
+  chat:   { label:"💬 对话助手", icon:"💬" },
+  cn:     { label:"🇨🇳 国内平台", icon:"🇨🇳" },
+  image:  { label:"🎨 图像生成", icon:"🎨" },
+  video:  { label:"🎬 视频生成", icon:"🎬" },
+  code:   { label:"💻 编程开发", icon:"💻" },
+  search: { label:"🔍 AI 搜索",  icon:"🔍" },
+  audio:  { label:"🎵 音频音乐", icon:"🎵" },
+  write:  { label:"✍️ 写作办公", icon:"✍️" },
+  design: { label:"🖌️ 设计创意", icon:"🖌️" },
+  agent:  { label:"🤖 AI 智能体", icon:"🤖" },
 };
 
-let currentCat = "all";
-let query = "";
+let currentCat = "all", query = "";
 
 function render() {
   const sections = document.getElementById("sections");
   const noResults = document.getElementById("noResults");
   sections.innerHTML = "";
-
   const q = query.trim().toLowerCase();
 
-  // Filter
   const filtered = DATA.filter(item => {
     const matchCat = currentCat === "all" || item.cat === currentCat;
     const matchQ = !q || item.name.toLowerCase().includes(q) ||
@@ -675,21 +359,13 @@ function render() {
     return matchCat && matchQ;
   });
 
-  if (!filtered.length) {
-    noResults.style.display = "block";
-    return;
-  }
+  if (!filtered.length) { noResults.style.display = "block"; return; }
   noResults.style.display = "none";
 
-  // Group by cat
   const groups = {};
-  filtered.forEach(item => {
-    if (!groups[item.cat]) groups[item.cat] = [];
-    groups[item.cat].push(item);
-  });
+  filtered.forEach(item => { if (!groups[item.cat]) groups[item.cat] = []; groups[item.cat].push(item); });
 
-  // Render in cat order
-  const order = ["chat", "cn", "image", "video", "code", "search", "audio", "write", "design", "agent"];
+  const order = ["chat","cn","image","video","code","search","audio","write","design","agent"];
   order.forEach(cat => {
     if (!groups[cat]) return;
     const meta = CATS[cat];
@@ -697,12 +373,10 @@ function render() {
     sec.className = "section";
     sec.innerHTML = `
       <div class="section-title">
-        <span class="section-icon">${meta.icon}</span>
-        ${meta.label}
+        <span>${meta.icon}</span>${meta.label}
         <span class="section-count">${groups[cat].length} 个工具</span>
       </div>
-      <div class="card-grid" id="grid-${cat}"></div>
-    `;
+      <div class="card-grid" id="grid-${cat}"></div>`;
     sections.appendChild(sec);
 
     const grid = sec.querySelector(`#grid-${cat}`);
@@ -713,19 +387,17 @@ function render() {
       a.target = "_blank";
       a.rel = "noopener noreferrer";
       a.innerHTML = `
-        ${item.hot ? '<span class="hot-badge">HOT</span>' : ""}
-        ${item.isNew ? '<span class="new-badge">NEW</span>' : ""}
+        ${item.hot  ? '<span class="hot-badge">HOT</span>' : ""}
+        ${item.isNew? '<span class="new-badge">NEW</span>' : ""}
         <div class="card-emoji">${item.emoji}</div>
         <div class="card-name">${item.name}</div>
         <div class="card-desc">${item.desc}</div>
-        ${item.tag ? `<span class="card-tag">${item.tag}</span>` : ""}
-      `;
+        ${item.tag ? `<span class="card-tag">${item.tag}</span>` : ""}`;
       grid.appendChild(a);
     });
   });
 }
 
-// Nav tabs
 document.getElementById("navTabs").addEventListener("click", e => {
   const tab = e.target.closest(".nav-tab");
   if (!tab) return;
@@ -735,7 +407,6 @@ document.getElementById("navTabs").addEventListener("click", e => {
   render();
 });
 
-// Search
 document.getElementById("searchInput").addEventListener("input", e => {
   query = e.target.value;
   currentCat = "all";
